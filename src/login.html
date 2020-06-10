@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+    <!--logo-->
+    <img src="../img/logo.png" >
+    <!--输入-->
+    <div>
+        <form action="/index.html" method="get">
+            <div>
+                <p><br>
+                    <label for="username"></label><input type="text" placeholder="请输入账号" id="username">
+                </p>
+                <p><br>
+                    <label for="password"></label><input type="password" placeholder="请输入密码" id="password">
+                </p>
+                <p><br>
+                    <button type="submit" onclick="return login();">立即登录</button>
+                </p>
+            </div>
+        </form>
+    </div>
+    <br>
+    <div>
+        <span>还没有账号？</span>
+        <a href="register.html" class="tosigneup">创建新的账户</a>
+    </div>
+
+    <!--页脚-->
+    <footer>
+        copyright © SOFT130002 The App All Rights Reserved.FDU备案号：17307130286
+    </footer>
+</body>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/login.js"></script>
+<script src="./js/utils.js"></script>
+</html>

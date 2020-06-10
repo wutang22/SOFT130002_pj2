@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/navigationbar.css">
+    <link rel="stylesheet" type="text/css" href="css/search.css">
+</head>
+<body>
+<div class="NavigationBar">
+    <div>
+        <a href="../index.html">
+            <img src="../img/logo.png" alt="logo">
+        </a>
+    </div>
+    <div class="Nav_left">
+        <ul>
+            <li>
+                <a href="../index.html">首页</a>
+            </li>
+            <li>
+                <a href="../src/browser.html">浏览页</a>
+            </li>
+            <li>
+                <a href="../src/search.html" class="highlight">搜索⻚</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="Nav_right dropdown"  id="personal_center">
+        <!--
+        <span class="dropbtn">个⼈中⼼<i class="fa fa-caret-down" aria-hidden="true"></i></span>
+        <div class="dropdown-content">
+            <a href="../src/upload.html"><i class="fa fa-upload" aria-hidden="true"></i> 上传</a>
+            <a href="../src/myPhoto.html"><i class="fa fa-picture-o" aria-hidden="true"></i> 我的照⽚</a>
+            <a href="../src/favor.html"><i class="fa fa-heart" aria-hidden="true"></i> 我的收藏</a>
+            <a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> 登⼊</a>
+        </div>
+        -->
+    </div>
+</div>
+
+<!--主要区域-->
+<div>
+    <!--搜索-->
+    <form class="search">
+        <div class="inside">
+            <h2>搜索</h2><b></b>
+            <label>
+                <input id="titleType" name="selectWay" type="radio" value="" checked="checked">标题筛选
+                <br>
+                <input type="text" name="titleInput" onclick="selectedTitle()">
+            </label>
+            <br>
+            <label>
+                <input id="descriptType" name="selectWay" type="radio" value="">描述筛选
+                <br>
+                <textarea name="descriptInput" onclick="selectedDescript()"></textarea>
+            </label>
+            <br>
+            <button type="button" onclick="searchTD()">确认 <i class="fa fa-search" aria-hidden="true"></i> </button>
+        </div>
+    </form>
+    <!--搜索结果-->
+    <div class="result">
+        <div class="inside">
+            <h2>搜索结果</h2>
+            <span id="searchResult">
+                <!--
+                <div class="onegroup">
+                    <a href="/src/details.html" id="resultImg1">
+                    <div class="leftbox" style="background-image: url(../img/222222.jpg)"></div>
+                    </a>
+                    <div class="rightbox">
+                        <article>
+                            <header>
+                                <br><h3 id="resultTitle1">Title</h3>
+                            </header>
+                            <p id="resultDescribe1">
+                                唐人张谓有句这样的诗：“看花寻径远，听鸟入林迷”。人生的途程不也如此吗？每一条规画好的道路、每一个经纬明确固定的位置，如果依着手册的指示而到达了固然可羡可慕，但那些“未求已应”的恩惠却更令人惊艳。那被嘤嘤鸟鸣所引渡而到达的迷离幻域，那因一朵花的呼唤而误闯的桃源，才是上天 更慷慨的福泽 的倾注。 曾经，我急于用我的小手向生命的大掌中掏取一粒粒耀眼的珍宝，但珍宝乍然消失，我抓不到我想要的东西。可是，也在这同时，我知道我被那温暖的大手握住了。手里没有东西，只有那双手掌而已，那掌心温暖厚实安妥，是“未求已应”的生命的触握
+                            </p>
+                        </article>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="onegroup">
+                    <a href="../src/details.html" id="resultImg2">
+                    <div class="leftbox" style="background-image: url(../img/222222.jpg)"></div>
+                    </a>
+                    <div class="rightbox">
+                        <article>
+                            <header>
+                                <br><h3 id="resultTitle2">Title</h3><br>
+                            </header>
+                            <p id="resultDescribe2">
+                                唐人张谓有句这样的诗：“看花寻径远，听鸟入林迷”。人生的途程不也如此吗？每一条规画好的道路、每一个经纬明确固定的位置，如果依着手册的指示而到达了固然可羡可慕，但那些“未求已应”的恩惠却更令人惊艳。那被嘤嘤鸟鸣所引渡而到达的迷离幻域，那因一朵花的呼唤而误闯的桃源，才是上天 更慷慨的福泽 的倾注。 曾经，我急于用我的小手向生命的大掌中掏取一粒粒耀眼的珍宝，但珍宝乍然消失，我抓不到我想要的东西。可是，也在这同时，我知道我被那温暖的大手握住了。手里没有东西，只有那双手掌而已，那掌心温暖厚实安妥，是“未求已应”的生命的触握
+                            </p>
+                        </article>
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="onegroup">
+                    <a href="../src/details.html" id="resultImg3">
+                    <div class="leftbox" style="background-image: url(../img/222222.jpg)"></div>
+                    </a>
+                    <div class="rightbox">
+                        <article>
+                            <header>
+                                <br><h3 id="resultTitle3">Title</h3>
+                            </header>
+                            <p id="resultDescribe3">
+                                唐人张谓有句这样的诗：“看花寻径远，听鸟入林迷”。人生的途程不也如此吗？每一条规画好的道路、每一个经纬明确固定的位置，如果依着手册的指示而到达了固然可羡可慕，但那些“未求已应”的恩惠却更令人惊艳。那被嘤嘤鸟鸣所引渡而到达的迷离幻域，那因一朵花的呼唤而误闯的桃源，才是上天 更慷慨的福泽 的倾注。 曾经，我急于用我的小手向生命的大掌中掏取一粒粒耀眼的珍宝，但珍宝乍然消失，我抓不到我想要的东西。可是，也在这同时，我知道我被那温暖的大手握住了。手里没有东西，只有那双手掌而已，那掌心温暖厚实安妥，是“未求已应”的生命的触握
+                            </p>
+                        </article>
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="onegroup">
+                    <a href="../src/details.html" id="resultImg4">
+                    <div class="leftbox" style="background-image: url(../img/222222.jpg)"></div>
+                    </a>
+                    <div class="rightbox">
+                        <article>
+                            <header>
+                                <br><h3 id="resultTitle4">Title</h3>
+                            </header>
+                            <p id="resultDescribe4">
+                                唐人张谓有句这样的诗：“看花寻径远，听鸟入林迷”。人生的途程不也如此吗？每一条规画好的道路、每一个经纬明确固定的位置，如果依着手册的指示而到达了固然可羡可慕，但那些“未求已应”的恩惠却更令人惊艳。那被嘤嘤鸟鸣所引渡而到达的迷离幻域，那因一朵花的呼唤而误闯的桃源，才是上天 更慷慨的福泽 的倾注。 曾经，我急于用我的小手向生命的大掌中掏取一粒粒耀眼的珍宝，但珍宝乍然消失，我抓不到我想要的东西。可是，也在这同时，我知道我被那温暖的大手握住了。手里没有东西，只有那双手掌而已，那掌心温暖厚实安妥，是“未求已应”的生命的触握
+                            </p>
+                        </article>
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="onegroup">
+                    <a href="../src/details.html" id="resultImg5">
+                        <div class="leftbox" style="background-image: url(../img/222222.jpg)"></div>
+                    </a>
+                    <div class="rightbox">
+                        <article>
+                            <header>
+                                <br><h3 id="resultTitle5">Title</h3>
+                            </header>
+                            <p id="resultDescribe5">
+                                唐人张谓有句这样的诗：“看花寻径远，听鸟入林迷”。人生的途程不也如此吗？每一条规画好的道路、每一个经纬明确固定的位置，如果依着手册的指示而到达了固然可羡可慕，但那些“未求已应”的恩惠却更令人惊艳。那被嘤嘤鸟鸣所引渡而到达的迷离幻域，那因一朵花的呼唤而误闯的桃源，才是上天 更慷慨的福泽 的倾注。 曾经，我急于用我的小手向生命的大掌中掏取一粒粒耀眼的珍宝，但珍宝乍然消失，我抓不到我想要的东西。可是，也在这同时，我知道我被那温暖的大手握住了。手里没有东西，只有那双手掌而已，那掌心温暖厚实安妥，是“未求已应”的生命的触握
+                            </p>
+                        </article>
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="onegroup">
+                    <a href="../src/details.html" id="resultImg6">
+                        <div class="leftbox" style="background-image: url(../img/222222.jpg)"></div>
+                    </a>
+                    <div class="rightbox">
+                        <article>
+                            <header>
+                                <br><h3 id="resultTitle6">Title</h3>
+                            </header>
+                            <p id="resultDescribe6">
+                                唐人张谓有句这样的诗：“看花寻径远，听鸟入林迷”。人生的途程不也如此吗？每一条规画好的道路、每一个经纬明确固定的位置，如果依着手册的指示而到达了固然可羡可慕，但那些“未求已应”的恩惠却更令人惊艳。那被嘤嘤鸟鸣所引渡而到达的迷离幻域，那因一朵花的呼唤而误闯的桃源，才是上天 更慷慨的福泽 的倾注。 曾经，我急于用我的小手向生命的大掌中掏取一粒粒耀眼的珍宝，但珍宝乍然消失，我抓不到我想要的东西。可是，也在这同时，我知道我被那温暖的大手握住了。手里没有东西，只有那双手掌而已，那掌心温暖厚实安妥，是“未求已应”的生命的触握
+                            </p>
+                        </article>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                -->
+            </span>
+
+            <!--⻚码-->
+            <div class="page" id="pageBtns">
+                <br><br>
+                <label>
+                    <button onclick="alert('页面已跳转')"><i class="fa fa-angle-double-left" aria-hidden="true"></i></button>
+                    <button onclick="alert('页面已跳转')" class="highlight">1</button>
+                    <button onclick="alert('页面已跳转')">2</button>
+                    <button onclick="alert('页面已跳转')">3</button>
+                    <button onclick="alert('页面已跳转')">4</button>
+                    <button onclick="alert('页面已跳转')">5</button>
+                    <button onclick="alert('页面已跳转')"><i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+
+                </label>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--页脚-->
+<footer>
+    <br>copyright © SOFT130002 The App All Rights Reserved.FDU备案号：17307130286
+</footer>
+
+<script>
+    function selectedTitle() {
+        let titleButton = document.getElementById("titleType");
+        titleButton.click();
+    }
+    function selectedDescript() {
+        let descriptButton = document.getElementById("descriptType");
+        descriptButton.click();
+    }
+</script>
+
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./js/navigationBar.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/utils.js"></script>
+</body>
+</html>

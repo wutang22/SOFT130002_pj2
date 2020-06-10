@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+</head>
+<body>
+    <img src="../img/logo.png" alt="logo">
+    <!--输入-->
+    <div class="mainPart">
+        <form action="login.html" method="get">
+            <div>
+                <p><br>
+                    <input type="text" placeholder="请输入账号名" id="name">
+                </p>
+                <p><br>
+                    <input type="email" placeholder="请输入邮箱" id="email">
+                </p>
+                <p><br>
+                    <input type="password" placeholder="请输入密码" id="password1">
+                </p>
+                <p><br>
+                    <input type="password" placeholder="请确认密码" id="password2">
+                </p>
+                <p><br>
+                    <button type="submit" onclick="return register();">点击注册</button>
+                </p>
+            </div>
+        </form>
+    </div>
+    <!--页脚-->
+    <footer>
+        copyright © SOFT130002 The App All Rights Reserved.FDU备案号：17307130286
+    </footer>
+</body>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/register.js"></script>
+<script src="./js/utils.js"></script>
+</html>

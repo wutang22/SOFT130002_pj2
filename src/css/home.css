@@ -1,0 +1,121 @@
+
+body{
+    /*background-image: url("../img/Mojave Day.jpg");
+    background-size: cover;*/
+    text-align: center;
+    background-color: rgb(231,234,237);
+}
+
+.scale img{
+    background-size: cover;
+    width:100%;
+    height: auto;
+}
+
+.pictures{
+    align-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.pic{
+    border-radius: 10px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-size:cover;
+}
+
+.description{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.pictures p{
+    max-height: 40%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.picture-x-1{
+    margin-left: 10%;
+    margin-top: 60px;
+    margin-right:4%;
+    float: left;
+    width: 24%;
+    height: 80%;
+    box-shadow: 0 10px 5px rgba(0,0,0,0.5);
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.picture-x-2{
+    margin-top: 60px;
+    margin-right: 4%;
+    float: left;
+    width: 24%;
+    height: 80%;
+    box-shadow: 0 10px 5px rgba(0,0,0,0.5);
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.picture-x-3{
+    margin-top: 60px;
+    margin-right:10%;
+    float: left;
+    width: 24%;
+    height: 80%;
+    box-shadow: 0 10px 5px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+
+.clear{
+    clear: both;
+}
+
+.textBox{
+    margin: 5%;
+    text-align: center;
+}
+
+#btnTop {
+    display: none;
+    position: fixed;
+    bottom: 56px;
+    right: 30px;
+    z-index: 99;
+    cursor: pointer;
+    background-color: rgba(137, 207, 240, 0.5);
+    color: white;
+    padding: 5px 8px;
+    border-radius:50%;
+}
+#btnTop:hover {
+    background-color: #1E90FF;
+}
+
+#btnReflash{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    cursor: pointer;
+    background-color: rgba(137, 207, 240, 0.5);
+    color: white;
+    padding: 5px 8px;
+    border-radius:50%;
+}
+#btnReflash:hover {
+    background-color: #1E90FF;
+}

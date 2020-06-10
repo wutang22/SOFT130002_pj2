@@ -1,0 +1,30 @@
+footer{
+    background-color: #333333;
+    bottom: 0;
+}
+.row{
+    margin-top: 30px;
+    margin-left: 110px;
+}
+.col-md-3-1{
+    margin-top:20px;
+    width: 33%;
+    float: left;
+}
+.col-md-3-2{
+    margin-top:20px;
+    width: 33%;
+    float: left;
+}
+.col-md-3-3{
+    margin-top:20px;
+    width: 33%;
+    float: left;
+}
+.copyright{
+    color: white;
+    text-align: center;
+}
+footer a{
+    color: white;
+}

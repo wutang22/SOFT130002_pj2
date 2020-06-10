@@ -1,0 +1,103 @@
+.mainArea{
+    margin-top: 3%;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 5%;
+    padding:15px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background-color: #f1f1f1;
+}
+.title{
+    text-align: center;
+}
+.like span{
+     float: left;
+     color: red;
+     margin-left: 20px;
+     margin-right: 20px;
+ }
+.secondsgroup{
+    margin-top: 15px;
+    padding-top: 5px;
+    border-style: outset none none none;
+    border-width: 1px;
+    border-color: rgba(59, 84, 112, 0.1);
+}
+
+.leftPart{
+    width: 50%;
+    height: 0;
+    padding-bottom: 50%;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-size:cover;
+    float: left;
+    margin:2.5%;
+}
+.rightPart{
+    float: left;
+    width: 45%;
+    text-align: left;
+    background-position: center center;
+}
+ul{
+    list-style-type:none;
+    padding:0;
+    text-align: center;
+    font-size: large;
+    margin-top: auto;
+    border-color: black;
+    border-width:1px;
+    border-style:solid;
+}
+
+.rightPart li{
+    color: rgba(2, 31, 56, 0.68);
+}
+
+.description {
+    margin-top: 10px;
+    text-indent:2em;
+}
+
+.clear{
+    clear: both;
+}
+
+button{
+    background-color: red;
+    width: 18%;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+    outline: none;
+    float: left;
+    margin-top: 3px;
+}
+
+button:hover{
+    background-color: white;
+    color: red;
+}
+
+small{
+    font-size: x-small;
+    color: #68828b;
+}
+
+
+footer{
+    background-color: #333333;
+    height: 50px;
+    bottom: 0;
+    color: #eeeeee;
+    text-align: center;
+    font-size: small;
+}

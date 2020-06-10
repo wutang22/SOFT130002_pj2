@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的照片</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/navigationbar.css">
+    <link rel="stylesheet" type="text/css" href="css/myPhoto.css">
+</head>
+<body>
+<!--导航栏-->
+<div class="NavigationBar">
+    <div>
+        <a href="../index.html">
+            <img src="../img/logo.png" alt="logo">
+        </a>
+    </div>
+
+    <div class="Nav_left">
+        <ul>
+            <li>
+                <a href="../index.html">首页</a>
+            </li>
+            <li>
+                <a href="./browser.html">浏览页</a>
+            </li>
+            <li>
+                <a href="./search.html">搜索⻚</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="Nav_right dropdown" id="personal_center">
+        <!--
+        <span class="dropbtn">个⼈中⼼<i class="fa fa-caret-down" aria-hidden="true"></i></span>
+        <div class="dropdown-content">
+            <a href="./upload.html"><i class="fa fa-upload" aria-hidden="true"></i> 上传</a>
+            <a href="./myPhoto.html"><i class="fa fa-picture-o" aria-hidden="true"></i> 我的照⽚</a>
+            <a href="./favor.html"><i class="fa fa-heart" aria-hidden="true"></i> 我的收藏</a>
+            <a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> 登⼊</a>
+        </div>
+        -->
+    </div>
+</div>
+<!--主要区域-->
+<div class="mainArea">
+    <div class = "title">
+        <h2>我的照片</h2>
+    </div>
+    <span id="myPhotos">
+        <!--
+        <div class="secondsgroup">
+            <a href="../src/details.html">
+            <div class="leftPart" style="background-image: url(../img/222222.jpg)"></div>
+            </a>
+            <div class="rightPart">
+                <br><h3>Title</h3>
+                <p>
+                    唐人张谓有句这样的诗：“看花寻径远，听鸟入林迷”。人生的途程不也如此吗？每一条规画好的道路、每一个经纬明确固定的位置，如果依着手册的指示而到达了固然可羡可慕，但那些“未求已应”的恩惠却更令人惊艳。那被嘤嘤鸟鸣所引渡而到达的迷离幻域，那因一朵花的呼唤而误闯的桃源，才是上天 更慷慨的福泽 的倾注。 曾经，我急于用我的小手向生命的大掌中掏取一粒粒耀眼的珍宝，但珍宝乍然消失，我抓不到我想要的东西。可是，也在这同时，我知道我被那温暖的大手握住了。手里没有东西，只有那双手掌而已，那掌心温暖厚实安妥，是“未求已应”的生命的触握
+                </p><br>
+                <button onclick="window.location.href='./upload.html'"><i class="fa fa-pencil" aria-hidden="true" ></i> 修改</button>
+                <button onclick="alert('图片已删除')"><i class="fa fa-trash" aria-hidden="true" ></i> 删除</button>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="secondsgroup">
+            <a href="../src/details.html">
+            <div class="leftPart" style="background-image: url(../img/222222.jpg)"></div>
+            </a>
+            <div class="rightPart">
+                <br><h3>Title</h3>
+                <p>
+                    唐人张谓有句这样的诗：“看花寻径远，听鸟入林迷”。人生的途程不也如此吗？每一条规画好的道路、每一个经纬明确固定的位置，如果依着手册的指示而到达了固然可羡可慕，但那些“未求已应”的恩惠却更令人惊艳。那被嘤嘤鸟鸣所引渡而到达的迷离幻域，那因一朵花的呼唤而误闯的桃源，才是上天 更慷慨的福泽 的倾注。 曾经，我急于用我的小手向生命的大掌中掏取一粒粒耀眼的珍宝，但珍宝乍然消失，我抓不到我想要的东西。可是，也在这同时，我知道我被那温暖的大手握住了。手里没有东西，只有那双手掌而已，那掌心温暖厚实安妥，是“未求已应”的生命的触握
+                </p><br>
+                <button onclick="window.location.href='./upload.html'"><i class="fa fa-pencil" aria-hidden="true" ></i> 修改</button>
+                <button onclick="alert('图片已删除')"><i class="fa fa-trash" aria-hidden="true" ></i> 删除</button>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="secondsgroup">
+            <a href="../src/details.html">
+            <div class="leftPart" style="background-image: url(../img/222222.jpg)"></div>
+            </a>
+            <div class="rightPart">
+                <br><h3>Title</h3>
+                <p>
+                    唐人张谓有句这样的诗：“看花寻径远，听鸟入林迷”。人生的途程不也如此吗？每一条规画好的道路、每一个经纬明确固定的位置，如果依着手册的指示而到达了固然可羡可慕，但那些“未求已应”的恩惠却更令人惊艳。那被嘤嘤鸟鸣所引渡而到达的迷离幻域，那因一朵花的呼唤而误闯的桃源，才是上天 更慷慨的福泽 的倾注。 曾经，我急于用我的小手向生命的大掌中掏取一粒粒耀眼的珍宝，但珍宝乍然消失，我抓不到我想要的东西。可是，也在这同时，我知道我被那温暖的大手握住了。手里没有东西，只有那双手掌而已，那掌心温暖厚实安妥，是“未求已应”的生命的触握
+                </p><br>
+                <button onclick="window.location.href='./upload.html'"><i class="fa fa-pencil" aria-hidden="true" ></i> 修改</button>
+                <button onclick="alert('图片已删除')"><i class="fa fa-trash" aria-hidden="true" ></i> 删除</button>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="secondsgroup">
+            <a href="../src/details.html">
+            <div class="leftPart" style="background-image: url(../img/222222.jpg)"></div>
+            </a>
+            <div class="rightPart">
+                <br><h3>Title</h3>
+                <p>
+                    唐人张谓有句这样的诗：“看花寻径远，听鸟入林迷”。人生的途程不也如此吗？每一条规画好的道路、每一个经纬明确固定的位置，如果依着手册的指示而到达了固然可羡可慕，但那些“未求已应”的恩惠却更令人惊艳。那被嘤嘤鸟鸣所引渡而到达的迷离幻域，那因一朵花的呼唤而误闯的桃源，才是上天 更慷慨的福泽 的倾注。 曾经，我急于用我的小手向生命的大掌中掏取一粒粒耀眼的珍宝，但珍宝乍然消失，我抓不到我想要的东西。可是，也在这同时，我知道我被那温暖的大手握住了。手里没有东西，只有那双手掌而已，那掌心温暖厚实安妥，是“未求已应”的生命的触握
+                </p><br>
+                <button onclick="window.location.href='./upload.html'"><i class="fa fa-pencil" aria-hidden="true" ></i> 修改</button>
+                <button onclick="alert('图片已删除')"><i class="fa fa-trash" aria-hidden="true" ></i> 删除</button>
+            </div>
+            <div class="clear"></div>
+        </div>
+        -->
+    </span>
+
+    <!--⻚码-->
+    <div class="page" id="pageBtns">
+        <br><br>
+        <label>
+            <button onclick="alert('页面已跳转')"><i class="fa fa-angle-double-left" aria-hidden="true"></i></button>
+            <button onclick="alert('页面已跳转')" class="highlight">1</button>
+            <button onclick="alert('页面已跳转')">2</button>
+            <button onclick="alert('页面已跳转')">3</button>
+            <button onclick="alert('页面已跳转')">4</button>
+            <button onclick="alert('页面已跳转')">5</button>
+            <button onclick="alert('页面已跳转')"><i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+        </label>
+    </div>
+
+</div>
+
+
+
+<!--页脚-->
+<footer>
+    <br>copyright © SOFT130002 The App All Rights Reserved.FDU备案号：17307130286
+</footer>
+
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./js/navigationBar.js"></script>
+<script src="./js/myPhoto.js"></script>
+<script src="./js/utils.js"></script>
+</body>
+</html>

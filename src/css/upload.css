@@ -1,0 +1,128 @@
+.centerpart{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 0;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border-radius:0 0 5px 5px;
+    text-align: left;
+    border-color: black;
+    border-width:1px;
+    border-style:none solid solid solid;
+
+}
+.title{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 3%;
+    background-color: #f1f1f1;
+    border-radius:5px 5px 0 0;
+    text-align: left;
+    padding-left: 10px;
+    border-color: black;
+    border-width:1px;
+    border-style:solid solid none solid;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+.upload{
+    height: 270px;
+    text-align: center;
+}
+
+.upload .imagePosition{
+    height: 230px;
+    color: black;;
+}
+
+.upload .imagePosition img{
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+}
+
+.upload .buttonPosition{
+    height: 40px;
+    margin: 0 auto;
+}
+
+.upload .buttonPosition input{
+    /*display: none;*/
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    margin-left: -60px;
+    opacity: 0;
+    cursor: inherit;
+}
+
+.upload .buttonPosition button{
+    position: absolute;
+    background-color: cornflowerblue;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    outline: none;
+    width: 120px;
+    height: 50px;
+    margin-left: -60px;
+}
+
+.upload .buttonPosition button:hover{
+    background-color: #1E90FF;
+    color: white;
+}
+
+
+.widcover textarea,input,select{
+    width: 98%;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+    border-color: black;
+    border-width:1px;
+    border-style:solid;
+}
+
+.widcover input{
+    height: 30px;
+}
+
+.submit{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 0;
+    text-align: left;
+    width: 90px;
+    padding: 0;
+}
+.submit input{
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    background-color: cornflowerblue;
+    color: white;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+    outline: none;
+}
+
+.submit input:hover{
+    background-color: #eeeeee;
+    color: cornflowerblue;
+}
+
+footer{
+    background-color: #333333;
+    height: 50px;
+    bottom: 0;
+    color: #eeeeee;
+    text-align: center;
+    font-size: small;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="src/css/reset.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="src/css/navigationbar.css">
+    <link rel="stylesheet" type="text/css" href="src/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="src/css/home.css">
+</head>
+<body>
+<div class="NavigationBar">
+    <div>
+        <a href="index.html">
+            <img src="img/logo.png" alt="logo">
+        </a>
+    </div>
+    <div class="Nav_left">
+        <ul>
+            <li>
+                <a href="index.html" class="highlight">首页</a>
+            </li>
+            <li>
+                <a href="src/browser.html">浏览页</a>
+            </li>
+            <li>
+                <a href="src/search.html">搜索⻚</a>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="Nav_right dropdown" id="personal_center">
+        <!--
+        <span class="dropbtn">个⼈中⼼<i class="fa fa-caret-down" aria-hidden="true"></i></span>
+        <div class="dropdown-content">
+            <a href="src/upload.html"><i class="fa fa-upload" aria-hidden="true"></i> 上传</a>
+            <a href="src/myPhoto.html"><i class="fa fa-picture-o" aria-hidden="true"></i> 我的照⽚</a>
+            <a href="src/favor.html"><i class="fa fa-heart" aria-hidden="true"></i> 我的收藏</a>
+            <a href="src/login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> 登⼊</a>
+        </div>
+        -->
+    </div>
+</div>
+<!--头图-->
+<div class="scale">
+    <img src="img/start2_pic.jpg" alt="头图">
+</div>
+
+<!--图⽚展示-->
+<div>
+    <div class="pictures">
+        <div class="picture-x-1">
+            <a href="src/details.html" id="img1">
+                <!--
+                <div class = "pic" style="background-image: url(img/222222.jpg)" ></div>
+                -->
+            </a>
+            <div class="description textBox">
+                <h3 id="title1">图片1</h3>
+                <p id="describe1">这是一张美丽的图片1</p></div>
+        </div>
+        <div class="picture-x-2">
+            <a href="src/details.html" id="img2">
+                <!--
+                <div class = "pic" style="background-image: url(img/222222.jpg)"></div>
+                -->
+            </a>
+            <div class="description textBox">
+                <h3 id="title2">图片2</h3>
+                <p id="describe2">这又是一张美丽的图片2。测试一下省略号。测试一下省略号。</p>
+            </div>
+
+        </div>
+        <div class="picture-x-3">
+            <a href="src/details.html" id="img3">
+                <!--
+                <div class="pic" style="background-image: url(img/222222.jpg)"></div>
+                -->
+            </a>
+            <div class="description textBox">
+                <h3 id="title3">图片3</h3>
+                <p id="describe3">这还是一张美丽的图片3</p>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--第二行-->
+    <div class="pictures">
+        <div class="picture-x-1">
+            <a href="src/details.html" id="img4">
+                <!--
+                <div class="pic" style="background-image: url(img/222222.jpg)"></div>
+                -->
+            </a>
+            <div class="description textBox">
+                <h3 id="title4">图片4</h3>
+                <p id="describe4">这是一张美丽的图片4</p>
+            </div>
+        </div>
+        <div class="picture-x-2">
+            <a href="src/details.html" id="img5">
+                <!--
+                <div class="pic" style="background-image: url(img/222222.jpg)">
+                </div>
+                -->
+            </a>
+            <div class="description textBox">
+                <h3 id="title5">图片5</h3>
+                <p id="describe5">这是一张美丽的图片5</p>
+            </div>
+        </div>
+        <div class="picture-x-3">
+            <a href="src/details.html" id="img6">
+                <!--
+                <div class="pic" style="background-image: url(img/222222.jpg)"></div>
+                -->
+            </a>
+            <div class="description textBox">
+                <h3 id="title6">图片6</h3>
+                <p id="describe6">这是一张美丽的图片6</p>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<br><br><br><br><br><br>
+
+<!--页脚-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3-1">
+                <p><a>使用条款</a></p>
+                <p><a>隐私保护</a></p>
+                <p><a>Cookie</a></p>
+            </div>
+            <div class="col-md-3-2">
+                <p><a>关于</a></p>
+                <p><a>联系我们</a></p>
+            </div>
+            <div class="col-md-3-3">
+                <div>
+                    <img src="img/icons/wechat.png" width="40px" />
+                    <img src="img/icons/ins.jpg" width="40px" />
+                </div>
+                <div>
+                    <img src="img/icons/qq.jpg" width="40px" />
+                    <img src="img/icons/github.jpg" width="40px" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyrightRow">
+        <div class="container">
+            <div class="row">
+                <p class="copyright">copyright © SOFT130002 The App All Rights Reserved.FDU备案号：17307130286</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--悬浮按钮 ...-->
+<div>
+    <span id="btnTop" onclick="returnTop()"><i class="fa fa-arrow-up" aria-hidden="true"></i></span>
+    <span id="btnReflash" onclick="drawImages('random')"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+</div>
+
+</body>
+<script>
+    window.onscroll =function () {
+        scrollF()
+    };
+
+    function scrollF() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("btnTop").style.display = "block";
+            document.getElementById("btnReflash").style.display = "block";
+        }else {
+            document.getElementById("btnTop").style.display = "none";
+            document.getElementById("btnReflash").style.display = "none";
+        }
+
+    }
+    function returnTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+<script src="./src/js/jquery-3.3.1.min.js"></script>
+<script src="./src/js/navigationBar.js"></script>
+<script src="./src/js/home.js"></script>
+<script src="./src/js/utils.js"></script>
+</html>

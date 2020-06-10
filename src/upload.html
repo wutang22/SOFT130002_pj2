@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/navigationbar.css">
+    <link rel="stylesheet" type="text/css" href="css/upload.css">
+</head>
+<body>
+<!--导航栏-->
+<div class="NavigationBar">
+    <div>
+        <a href="../index.html">
+            <img src="../img/logo.png" alt="logo">
+        </a>
+    </div>
+
+    <div class="Nav_left">
+        <ul>
+            <li>
+                <a href="../index.html">首页</a>
+            </li>
+            <li>
+                <a href="./browser.html">浏览页</a>
+            </li>
+            <li>
+                <a href="./search.html">搜索⻚</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="Nav_right dropdown" id="personal_center">
+        <!--
+        <span class="dropbtn">个⼈中⼼<i class="fa fa-caret-down" aria-hidden="true"></i></span>
+        <div class="dropdown-content">
+            <a href="./upload.html"><i class="fa fa-upload" aria-hidden="true"></i> 上传</a>
+            <a href="./myPhoto.html"><i class="fa fa-picture-o" aria-hidden="true"></i> 我的照⽚</a>
+            <a href="./favor.html"><i class="fa fa-heart" aria-hidden="true"></i> 我的收藏</a>
+            <a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> 登⼊</a>
+        </div>
+        -->
+    </div>
+</div>
+
+<div class="title">
+    <h2>图片上传</h2>
+</div>
+<div class="centerpart">
+    <form id="form" action="/src/myPhoto.html" enctype="multipart/form-data">
+        <!--图片上传-->
+        <div class="upload">
+            <div id="showingImageDiv" class="imagePosition" >
+                <br><br><br><br><br><br>
+                图片未上传
+            </div>
+            <div class="buttonPosition">
+                <button>上传图片 <i class="fa fa-upload" aria-hidden="true"></i></button>
+                <input type="file" id="chooseImage" value="null" name="chooseImage" accept="image/png,image/jpeg" onchange="renderImg()">
+            </div>
+        </div>
+
+        <div class="widcover">
+            <div>
+                <br><h4>图⽚标题</h4>
+                    <input type="text" id="titleName" name="titleName">
+            </div>
+            <div>
+                <br><h4>图⽚描述</h4>
+                    <textarea rows="30" id="imgDes" name="imgDes"></textarea>
+            </div>
+
+            <div>
+                <h4>主题</h4>
+                <label>
+                    <select id="selTheme" name="selTheme">
+                        <option value="notSelected">--选择主题--</option>
+                        <option value="scenery">Scenery</option>
+                        <option value="city">City</option>
+                        <option value="people">People</option>
+                        <option value="animal">Animal</option>
+                        <option value="building">Building</option>
+                        <option value="wonder">Wonder</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+            </div>
+            <!--多级选择栏-->
+            <div>
+                <h4>拍摄国家</h4>
+                <label>
+                    <select id="selCountry" name="selCountry">
+                        <option value="notSelected">--选择国家--</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <h4>拍摄城市</h4>
+                <label>
+                    <select id="selCity" name="selCity">
+                        <option value='notSelected'>--选择城市--</option>
+                    </select>
+                </label>
+            </div>
+
+            <!--隐藏字段，需要提交的附加信息-->
+            <div hidden="hidden">
+                <!--用户ID-->
+                <input type="text" value="userIDxxx" name="userID" id="userID">
+                <!--图片ID-->
+                <input type="text" value="imageIDxxx" name="imgID" id="imgID">
+                <!--是否有上传图片-->
+                <input type="text" value="false" name="ifhasImgFile" id="ifhasImgFile">
+                <input type="text" value="" name="noFilePath" id="noFilePath">
+            </div>
+
+            <div class="submit" id="submitBtm">
+                <input type="submit" value="上传" onclick="return mysubmit();">
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<!--页脚-->
+<footer>
+    <br>copyright © SOFT130002 The App All Rights Reserved.FDU备案号：17307130286
+</footer>
+
+
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./js/navigationBar.js"></script>
+<script src="./js/upload.js"></script>
+<script src="./js/utils.js"></script>
+</body>
+</html>

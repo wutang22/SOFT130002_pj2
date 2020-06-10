@@ -1,0 +1,104 @@
+.NavigationBar{
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    font-family: "Adobe Heiti Std", serif;
+    font-size:16px;
+}
+
+.NavigationBar img{
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 10px;
+    float: left;
+
+}
+
+.Nav_left
+{
+    float: left;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.Nav_left ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+.Nav_left li{
+    float: left;
+    margin-right:10px;  /* 两个li之间的距离*/
+}
+
+.Nav_left a:link,.Nav_left a:visited {
+    display:block;
+    width:70px;
+    font-weight:bold;
+    color: rgb(191, 191, 193);
+    text-align:center;
+    padding: 4px;
+    text-decoration:none;
+}
+
+.Nav_left a:hover{
+    color: black;
+    background-color: rgb(236,236,236);
+}
+
+.Nav_left .highlight{
+    background-color: rgb(34,34,34);
+}
+
+.Nav_right{
+    position: absolute;
+    right: 20px;
+    margin-top: 10px;
+    z-index:9999;
+}
+
+.dropbtn {
+    font-weight:bold;
+    color: rgb(236,236,236);
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    margin-top: 10px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 105px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: #2a4e77;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 12px;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #eeeeee;
+    color: black;
+}
+
+.Nav_right.highlight{
+    padding-bottom: 8px;
+    border-bottom: rgba(24, 40, 82, 0.83);
+    border-bottom-width: 5px;
+    border-style: none none solid none;
+}

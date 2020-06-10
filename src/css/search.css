@@ -1,0 +1,153 @@
+.search{
+    padding-top: 15px;
+    padding-bottom: 20px;
+    margin-top: 3%;
+    margin-right: 15%;
+    margin-left: 15%;
+    box-shadow: 0px 2px 1px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    border-style: outset none none none;
+    background-color: #f1f1f1;
+    text-align: left;
+}
+
+.result{
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+    margin-top: 3%;
+    margin-right: 15%;
+    margin-left: 15%;
+    box-shadow: 0px 2px 1px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    border-style: outset none none none;
+    background-color: #f1f1f1;
+}
+
+.search .inside{
+    padding-left: 15px;
+}
+
+.search .inside h2{
+    margin-top: -6px;
+    height: 30px;
+}
+
+.search .inside b
+{
+    background: #ddd;
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    _overflow: hidden;
+    vertical-align: middle;
+    margin-bottom: 4px;
+}
+
+.result .inside h2{
+    margin-top:5px;
+    height: 45px;
+}
+.search input[type="text"],textarea{
+    border-radius: 5px;
+    border-style: none;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+    width: 98%;
+}
+
+.search button{
+    margin-left: 5px;
+    margin-top: 2px;
+    width: 60px;
+    background-color:cornflowerblue;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+    outline: none;
+    text-align: center;
+}
+
+.search button:hover{
+    background-color: snow;
+    color: black;
+}
+
+.result .inside{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.leftbox{
+    width: 20%;
+    height: 0;
+    padding-bottom: 20%;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-size:cover;
+    float: left;
+    margin:1%;
+}
+
+.rightbox{
+    margin-left: 5px;
+    float: left;
+    width: 75%;
+    padding-left: 15px;
+}
+
+.rightbox p{
+    margin-top: 10px;
+    color: rgba(2, 31, 56, 0.68);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-indent:2em;
+}
+
+.onegroup{
+    padding-top: 5px;
+    border-style: outset none none none;
+    border-width: 1px;
+    border-color: rgba(59, 84, 112, 0.1);
+}
+
+.clear{
+    clear: both;
+}
+
+body{
+    text-align: left;
+}
+
+.page{
+    text-align: center;
+}
+
+.page button{
+    background-color: rgba(47, 60, 72, 0);
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #2a4e77;
+}
+
+.page .highlight{
+    color: #022d53;
+    font-weight: bold;
+}
+
+footer{
+    background-color: #333333;
+    height: 50px;
+    bottom: 0;
+    color: #eeeeee;
+    text-align: center;
+    font-size: small;
+}
