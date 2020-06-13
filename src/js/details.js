@@ -9,9 +9,9 @@ window.onload = function () {
     console.log("通过后台读取图片详情...");//
     let xml1 = $.ajax({
         type: "POST",
-        url: '/src/php/imageInfo.php',
+        url: '../src/php/imageInfo.php',
         dataType: 'json',
-        async: true,
+        //async: true,
         data: {'imgID': imgID},
 
         success: function (ans) {
@@ -33,7 +33,7 @@ function draw() {
     let ownerE = document.getElementById("owner");
     ownerE.innerHTML = "by "+detailState.img.ownerName;
     let imgE =document.getElementById("img");
-    let path = "/travel-images/medium/"+detailState.img.path;
+    let path = "../travel-images/medium/"+detailState.img.path;
     console.log(path);
     imgE.innerHTML = "<div class=\"leftPart\" style=\"background-image: url("+path+")\"></div>";
 
@@ -69,7 +69,7 @@ function drawFavorIcon() {
         //判断是否已经收藏
         let xml1 = $.ajax({
             type: "POST",
-            url: '/src/php/haveFavored.php',
+            url: '../src/php/haveFavored.php',
             dataType: 'json',
             async: false,
             data: {'userID': detailState.userID,'imgID':detailState.img.imgID},
@@ -111,7 +111,7 @@ function addFavor() {
     detailState.img.favorNum++;
     let xml1 = $.ajax({
         type: "POST",
-        url: '/src/php/addFavor.php',
+        url: '../src/php/addFavor.php',
         dataType: 'json',
         async: false,
         data: {'userID': detailState.userID,'imgID':detailState.img.imgID},
@@ -128,7 +128,7 @@ function cancelFavor() {
     console.log("取消收藏,发起后台");
     let xml1 = $.ajax({
         type: "POST",
-        url: '/src/php/cancelFavor.php',
+        url: '../src/php/cancelFavor.php',
         dataType: 'json',
         async: false,
         data: {'userID': detailState.userID,'imgID':detailState.img.imgID},

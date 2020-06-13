@@ -8,13 +8,23 @@ function isUserLogin() {
     }
 }
 
+//登录成功设置用户登录信息
+function setUser(userName,userID) {
+    let user = {};
+    user.userID = userID;
+    user.name = userName;
+    user.loginState =true;
+    sessionStorage.setItem('user',JSON.stringify(user));
+    console.log("登录成功，现在的user是"+JSON.stringify(user));
+}
+
 /**
  * 获得用户ID，若失败则返回-1
  * @returns {number}
  */
 //-1表示出错
 function getUserID() {
-    let user = JSON.parse(localStorage.getItem('user'));
+    let user = JSON.parse(sessionStorage.getItem('user'));
     if(user===undefined){
         return -1;
     }

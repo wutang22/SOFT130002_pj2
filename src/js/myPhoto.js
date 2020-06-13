@@ -12,9 +12,9 @@ function getPhotosAndShow() {
     let userID = getUserID();
     let xml1 = $.ajax({
         type: "POST",
-        url: '/src/php/getMyPhotos.php',
+        url: '../src/php/getMyPhotos.php',
         dataType: 'json',
-        async: false,
+        //async: false,//异步，必须的
         data: {'userID': userID},
 
         success: function (ans) {
@@ -80,7 +80,7 @@ function showPageBtns() {
 
 //拼凑单个图片的html
 function getOneImgHtml(img,isFirst) {
-    let basePath = "/travel-images/medium/";
+    let basePath = "../travel-images/medium/";
     let path = basePath+img.path;
     let html;
     /*
@@ -140,9 +140,9 @@ function modifyImg(imgID) {
 function deleteImg(imgID) {
     let xml1=$.ajax({
         type: "POST",
-        url:'/src/php/deleteImage.php',
+        url:'../src/php/deleteImage.php',
         dataType:'json',
-        async:true,
+        //async:true,
         data:{'imgID':imgID},
 
         success:function (ans) {

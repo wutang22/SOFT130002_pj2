@@ -13,9 +13,9 @@ function getAndShowFavor() {
     let userID = getUserID();
     let xml1 = $.ajax({
         type: "POST",
-        url: '/src/php/getMyFavors.php',
+        url: '../src/php/getMyFavors.php',
         dataType: 'json',
-        async: false,
+        //async: false,
         data: {'userID': userID},
 
         success: function (ans) {
@@ -78,7 +78,7 @@ function showPageBtns(){
 
 //拼凑单个图片的html
 function getOneImgHtml(img) {
-    let basePath = "/travel-images/medium/";
+    let basePath = "../travel-images/medium/";
     let path = basePath+img.path;
     let html;
     html="<div class=\"secondsgroup\">\n";
@@ -125,9 +125,9 @@ function cancelFavor(imgID) {
     let userID = getUserID();
     let xml1=$.ajax({
         type: "POST",
-        url:'/src/php/cancelFavor.php',
+        url:'../src/php/cancelFavor.php',
         dataType:'json',
-        async:true,
+        //async:true,
         data:{'imgID':imgID,'userID':userID},
 
         success:function (ans) {

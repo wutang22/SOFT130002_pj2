@@ -60,9 +60,9 @@ function recoverDraw() {
     //imgID
     let xml=$.ajax({
         type: "GET",
-        url:'/src/php/uploadImgInfo.php',
+        url:'../src/php/uploadImgInfo.php',
         dataType:'json',
-        async:true,
+        //async:true,
         data:{'imgID':uploadState.imgId},
 
         success:function (ans) {
@@ -199,7 +199,7 @@ function mysubmit() {
         //formData.append('file',$(':file')[0].files[0]);
         //坑点: 无论怎么传数据,console.log(formData)都会显示为空,但其实值是存在的,f12查看Net tab可以看到数据被上传了
         $.ajax({
-            url:'/src/php/upload.php',
+            url:'../src/php/upload.php',
             type: 'POST',
             data: formData,
             //这两个设置项必填
@@ -224,7 +224,7 @@ function initialize() {
 
     let xml1=$.ajax({
         type: "POST",
-        url:'/src/php/countryAndCity.php',
+        url:'../src/php/countryAndCity.php',
         dataType:'json',
         async:false,
         data:{'getType':"getCountriesCities"},

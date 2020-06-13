@@ -13,9 +13,7 @@ window.onload = function () {
 
     select.onchange=function () {
         let index=-1;
-        // console.log("onchange");//
         for(let i=0;i<jsonData.length;i++){
-            // console.log("jsonData="+jsonData[i].iso);//
             if(select.value==jsonData[i].iso){
                 index = i;
                 break;
@@ -41,9 +39,9 @@ function initialize() {
     let isT =false;
     let xml1=$.ajax({
         type: "POST",
-        url:'/src/php/countryAndCity.php',
+        url:'../src/php/countryAndCity.php',
         dataType:'json',
-        async:false,
+        async:false,//异步，必须的
         data:{'getType':"getCountriesCities"},
 
         success:function (ans) {
@@ -57,9 +55,9 @@ function initialize() {
     } );
     let xml2=$.ajax({
         type: "POST",
-        url:'/src/php/getThemes.php',
+        url:'../src/php/getThemes.php',
         dataType:'json',
-        async:false,
+        //async:false,
         data:{'getType':"getThemes"},
 
         success:function (ans) {
@@ -115,9 +113,9 @@ function titleFlit() {
     }else {
         let xml=$.ajax({
             type: "POST",
-            url:'/src/php/searchImages.php',
+            url:'../src/php/searchImages.php',
             dataType:'json',
-            async:true,
+            //async:true,
             data:{'searchType':'title','value':title},
 
             success:function (ans) {
@@ -147,9 +145,9 @@ function choicesFlit() {
         //和后台交互获得值
         let xml=$.ajax({
             type: "POST",
-            url:'/src/php/searchImages.php',
+            url:'../src/php/searchImages.php',
             dataType:'json',
-            async:true,
+            //async:true,
             data:{'searchType':'choices','value':'value','theme':theme,'country':country,'city':city},
 
             success:function (ans) {
@@ -170,9 +168,9 @@ function hotCountryFlit(countryISO) {
     //和后台交互获得值
     let xml=$.ajax({
         type: "POST",
-        url:'/src/php/searchImages.php',
+        url:'../src/php/searchImages.php',
         dataType:'json',
-        async:true,
+        //async:true,
         data:{'searchType':'hotCountry','value':countryISO},
 
         success:function (ans) {
@@ -192,9 +190,9 @@ function hotCityFlit(cityCode) {
     //和后台交互获得值
     let xml=$.ajax({
         type: "POST",
-        url:'/src/php/searchImages.php',
+        url:'../src/php/searchImages.php',
         dataType:'json',
-        async:true,
+        //async:true,
         data:{'searchType':'hotCity','value':cityCode},
 
         success:function (ans) {
@@ -214,9 +212,9 @@ function hotThemeFlit(themeName) {
     //和后台交互获得值
     let xml=$.ajax({
         type: "POST",
-        url:'/src/php/searchImages.php',
+        url:'../src/php/searchImages.php',
         dataType:'json',
-        async:true,
+        //async:true,
         data:{'searchType':'hotTheme','value':themeName},
 
         success:function (ans) {
@@ -236,7 +234,7 @@ function hotThemeFlit(themeName) {
 function show() {
     let showDiv = document.getElementById("showDiv");
     let htmlS = "";
-    let basePath = "/travel-images/medium/";
+    let basePath = "../travel-images/medium/";
     let notEnd = true;
     for(let i=0;i<4&&notEnd;i++){
         htmlS+="<div>";
@@ -264,9 +262,9 @@ function showAll() {
     //和后台交互获得值
     let xml=$.ajax({
         type: "POST",
-        url:'/src/php/searchImages.php',
+        url:'../src/php/searchImages.php',
         dataType:'json',
-        async:true,
+        //async:true,
         data:{'searchType':'all','value':"all"},
         success:function (ans) {
             // let result = ans;

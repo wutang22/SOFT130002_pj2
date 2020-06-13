@@ -23,9 +23,9 @@ function searchTD() {
         }else {
             let xml=$.ajax({
                 type: "POST",
-                url:'/src/php/searchImages.php',
+                url:'../src/php/searchImages.php',
                 dataType:'json',
-                async:true,
+                //async:true,
                 data:{'searchType':'title','value':title},
 
                 success:function (ans) {
@@ -42,9 +42,9 @@ function searchTD() {
         console.log("describe="+describe);
         let xml=$.ajax({
             type: "POST",
-            url:'/src/php/searchImages.php',
+            url:'../src/php/searchImages.php',
             dataType:'json',
-            async:true,
+            //async:true,
             data:{'searchType':'des','value':describe},
 
             success:function (ans) {
@@ -58,7 +58,7 @@ function searchTD() {
 
 //绘制
 function draw() {
-    let basePath = "/travel-images/medium/";
+    let basePath = "../travel-images/medium/";
     console.log("这页图片个数为"+searchState.imgs.length);
     let resultE=document.getElementById("searchResult");
     let html="";

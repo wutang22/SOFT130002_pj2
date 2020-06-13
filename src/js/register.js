@@ -54,9 +54,9 @@ function checkExistedName(name) {
     let result;
     let xml=$.ajax({
         type: "POST",
-        url:'/src/php/checkUser.php',
+        url:'../src/php/checkUser.php',
         dataType:'json',
-        async:false,
+        async:false,//异步
         data:{'name':name},
 
         success:function (ans) {
@@ -87,9 +87,9 @@ function signUp(name,password,mail) {
     let result;
     let xml=$.ajax({
         type: "POST",
-        url:'/src/php/register.php',
+        url:'../src/php/register.php',
         dataType:'json',
-        async:false,
+        async:false,//异步
         data:{'name':name,'password':password,'mail':mail},
 
         success:function (ans) {

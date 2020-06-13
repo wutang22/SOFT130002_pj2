@@ -12,17 +12,20 @@ function login() {
     let userId=-1;
     let xml=$.ajax({
         type: "POST",
-        url:'/src/php/login.php',
+        url:'../src/php/login.php',
         dataType:'json',
-        async:false,
+        async:false,//一定要有，不然会出现result还是undefineded
         data:{'name':name,'password':password},
 
         success:function (ans) {
+            console.log(ans);
             result = ans.isSuccessful;
             userId = ans.userID;
+            //console.log("结果是"+result);
+            //console.log(ans.userID);
         }
     } );
-
+    //console.log(result);
     if(result){
         setUser(name,userId);
         console.log("登录成功");
@@ -34,11 +37,3 @@ function login() {
     }
 }
 
-//登录成功设置用户登录信息
-function setUser(userName,userID) {
-    let user = {};
-    user.userID = userID;
-    user.name = userName;
-    user.loginState =true;
-    sessionStorage.setItem('user',JSON.stringify(user));
-}

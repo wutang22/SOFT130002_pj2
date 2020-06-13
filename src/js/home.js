@@ -7,9 +7,9 @@ window.onload = function () {
 function drawImages(getType) {
     let xml=$.ajax({
         type: "POST",
-        url:'/src/php/selectImages.php',
+        url:'../src/php/selectImages.php',
         dataType:'json',
-        async:false,
+        //async:false,
         data:{'getType':getType},
 
         success:function (ans) {
@@ -21,7 +21,7 @@ function drawImages(getType) {
 }
 
 function drawSingleImage(pictures) {
-    let basePath = "/travel-images/medium/";
+    let basePath = "./travel-images/medium/";
     for (let i=0;i<6;i++){
         let picture = pictures[i];
         let path = basePath+ picture["path"];

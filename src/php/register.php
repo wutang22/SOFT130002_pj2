@@ -5,6 +5,8 @@ require_once('config.php');
 $name = $_POST['name'];
 //这里做哈希加盐
 $pass = $_POST['password'];
+$pass = password_hash($pass, PASSWORD_DEFAULT);
+
 $mail = $_POST['mail'];
 
 //在前端检查所有参数合理性后，往表中插入一条数据

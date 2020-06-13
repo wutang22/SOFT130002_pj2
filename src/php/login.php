@@ -21,11 +21,16 @@ try {
     $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //这里可以用预处理，防止sql注入
-    $sql = "SELECT UID FROM traveluser WHERE UserName ='".$name."' AND Pass='".$password."'";
+    //$sql = "SELECT UID FROM traveluser WHERE UserName ='".$name."' AND Pass='".$password."'";
+    $sql = "SELECT UID,Pass FROM traveluser WHERE UserName ='".$name."'";
     $result = $pdo->query($sql);
 
     if($row = $result->fetch()){
-        $answer = new  UserLoginState(true,$row['UID']);
+        if (password_verify($password, $row['Pass'])) {
+            $answer = new  UserLoginState(true,$row['UID']);
+        } else {
+            $answer = new UserLoginState(false,-1);//密码不对
+        }
     }else{
         $answer = new UserLoginState(false,-1);
     }
