@@ -8,30 +8,7 @@ window.onload = function () {
     initialize();
     drawUserCenter();
     showAll();
-
-    let select= document.getElementById("selCountry");
-
-    select.onchange=function () {
-        let index=-1;
-        for(let i=0;i<jsonData.length;i++){
-            if(select.value==jsonData[i].iso){
-                index = i;
-                break;
-            }
-        }
-        let citiesHtmlS;
-        let cities = document.getElementById("selCity");
-        if(index>=0){
-            citiesHtmlS = "<option selected value='notSelected'>--选择城市--</option>";
-            for(let i=0;i<jsonData[index].cities.length;i++){
-                // console.log("citiesCode="+jsonData[index].citiesCode[i]+"("+jsonData[index].cities[i]);
-                citiesHtmlS +="<option value='"+jsonData[index].citiesCode[i]+"'>"+jsonData[index].cities[i]+"</option>";
-            }
-        }else {
-            citiesHtmlS = "<option selected value='notSelected'>--选择城市--</option>";
-        }
-        cities.innerHTML = citiesHtmlS;
-    }
+    citySelected();
 };
 
 function initialize() {
@@ -57,7 +34,6 @@ function initialize() {
         type: "POST",
         url:'../src/php/getThemes.php',
         dataType:'json',
-        //async:false,
         data:{'getType':"getThemes"},
 
         success:function (ans) {
@@ -92,6 +68,30 @@ function showInitCCs(){
     countries.innerHTML = countriesHtmlS;
 }
 
+function citySelected(){
+    let select= document.getElementById("selCountry");
+
+    select.onchange=function () {
+        let index=-1;
+        for(let i=0;i<jsonData.length;i++){
+            if(select.value==jsonData[i].iso){
+                index = i;
+                break;
+            }
+        }
+        let citiesHtmlS;
+        let cities = document.getElementById("selCity");
+        if(index>=0){
+            citiesHtmlS = "<option selected value='notSelected'>--选择城市--</option>";
+            for(let i=0;i<jsonData[index].cities.length;i++){
+                citiesHtmlS +="<option value='"+jsonData[index].citiesCode[i]+"'>"+jsonData[index].cities[i]+"</option>";
+            }
+        }else {
+            citiesHtmlS = "<option selected value='notSelected'>--选择城市--</option>";
+        }
+        cities.innerHTML = citiesHtmlS;
+    }
+}
 function showInitThemes() {
     let themes = document.getElementById("selConcept");
     let themeHtmlS = "<option selected value='notSelected'>--选择主题--</option>";
@@ -102,14 +102,14 @@ function showInitThemes() {
 }
 
 
-//----------------五项筛选------------------------
+
 //标题筛选
 function titleFlit() {
     let titleE =document.getElementById("text1");
     let title = titleE.value;
     console.log("title="+title);//
-    if(title==null||title==""){
-        //跳过
+    if(title==null||title==""){//没有内容
+
     }else {
         let xml=$.ajax({
             type: "POST",
@@ -130,7 +130,7 @@ function titleFlit() {
     show();
     clearChoices();
 }
-//下拉菜单联动筛选
+//联合筛选
 function choicesFlit() {
     let themes = document.getElementById("selConcept");
     let countries= document.getElementById("selCountry");
@@ -151,7 +151,6 @@ function choicesFlit() {
             data:{'searchType':'choices','value':'value','theme':theme,'country':country,'city':city},
 
             success:function (ans) {
-                // let result = ans;
                 browserStates.imgs=ans;
                 browserStates.pageN=1;
                 show();
@@ -162,7 +161,7 @@ function choicesFlit() {
     show();
     clearTitle();
 }
-//左侧栏热门国家筛选
+//热门国家筛选
 function hotCountryFlit(countryISO) {
     console.log("countryISO="+countryISO);
     //和后台交互获得值
@@ -184,7 +183,7 @@ function hotCountryFlit(countryISO) {
     clearTitle();
     clearChoices();
 }
-//左侧栏热门城市筛选
+//热门城市筛选
 function hotCityFlit(cityCode) {
     console.log("cityName="+cityCode);
     //和后台交互获得值
@@ -206,7 +205,7 @@ function hotCityFlit(cityCode) {
     clearTitle();
     clearChoices();
 }
-//左侧栏热门主题筛选
+//热门主题筛选
 function hotThemeFlit(themeName) {
     console.log("themeName="+themeName);
     //和后台交互获得值
@@ -264,7 +263,6 @@ function showAll() {
         type: "POST",
         url:'../src/php/searchImages.php',
         dataType:'json',
-        //async:true,
         data:{'searchType':'all','value':"all"},
         success:function (ans) {
             // let result = ans;
@@ -277,7 +275,7 @@ function showAll() {
     } );
 }
 
-//更新页码显示
+//更新页码
 function showPageBtns() {
     let pageN =Math.ceil(browserStates.imgs.length/16) ;//总页数
     if(pageN===0){pageN =1;}//如果为空，则显示一页空
@@ -299,7 +297,7 @@ function showPageBtns() {
     element.innerHTML=html;
 }
 
-//跳转页面 从1开始 pageN可能是字符串
+//跳转页面
 function changePage(pageN) {
     console.log("我跳转啦");
     console.log("现在的Page是："+pageN);
@@ -317,27 +315,24 @@ function changePage(pageN) {
     show();
 }
 
-//初始化侧边栏 已经确保jsonData有城市和国家，themeData有主题
+//初始化侧边栏
 function initSide() {
     let countries=[];
     let cities=[];
     let themes=[];
     let cISOs = [];
     let cityCodes =[];
-    //注意每个数组长度保证是7
+
     for (let i=0,j=0;i<7;i++,j++){
-        if(i>=jsonData.length){i=0;}
+        if(i>=jsonData.length){i=0;}//不足七个，重复第一个
         countries.push(jsonData[i].country);
         cISOs.push(jsonData[i].iso);
         cities.push(jsonData[i].cities[0]);//取每个国家第一个城市
         cityCodes.push(jsonData[i].citiesCode[0]);
         // jsonData[index].citiesCode[i]+"'>"+jsonData[index].cities[i]
-        if(j>=themeData.length){j=0;}
+        if(j>=themeData.length){j=0;}//不足七个，重复第一个
         themes.push(themeData[j]);
     }
-    // countries = ["中国","日本","韩国","美国","英国","法国","印度"];
-    // cities = ["北京","东京","首尔","纽约","伦敦","巴黎","孟买"];
-    // themes = ["风景","城市","人文","动物","建筑","特色","奇迹"];
     sideShow(countries,cities,themes,cISOs,cityCodes);
 }
 
@@ -368,7 +363,7 @@ function sideShow(countries,cities,themes,cISOs,cityCodes) {
     themeE.innerHTML = html;
 }
 
-// --------------清空其他过滤器------------------------
+
 //清空标题搜索
 function clearTitle() {
     let titleE =document.getElementById("text1");

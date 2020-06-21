@@ -7,7 +7,6 @@ window.onload = function () {
     draw();
 };
 
-//搜索按钮按下后
 function searchTD() {
     let imgPaths,imgIds,imgTitles,imgDes;
     let titleE = document.getElementById("titleType");
@@ -25,7 +24,6 @@ function searchTD() {
                 type: "POST",
                 url:'../src/php/searchImages.php',
                 dataType:'json',
-                //async:true,
                 data:{'searchType':'title','value':title},
 
                 success:function (ans) {
@@ -40,19 +38,25 @@ function searchTD() {
         //描述搜索
         let describe = document.getElementsByName("descriptInput")[0].value;
         console.log("describe="+describe);
-        let xml=$.ajax({
-            type: "POST",
-            url:'../src/php/searchImages.php',
-            dataType:'json',
-            //async:true,
-            data:{'searchType':'des','value':describe},
+        if(describe==null||describe==""){
+            searchState.imgs =[];
+            searchState.pageI = 1;//当前页面
+            console.log("初始页面");
+            draw();
+        }else {
+            let xml = $.ajax({
+                type: "POST",
+                url: '../src/php/searchImages.php',
+                dataType: 'json',
+                data: {'searchType': 'des', 'value': describe},
 
-            success:function (ans) {
-                searchState.imgs =ans;
-                searchState.pageI = 1;//当前页面
-                draw();
-            }
-        } );
+                success: function (ans) {
+                    searchState.imgs = ans;
+                    searchState.pageI = 1;//当前页面
+                    draw();
+                }
+            });
+        }
     }
 }
 

@@ -8,7 +8,7 @@ window.onload = function () {
     getAndShowFavor();
 };
 
-//后台获得我的收藏并显示
+//显示我的收藏
 function getAndShowFavor() {
     let userID = getUserID();
     let xml1 = $.ajax({
@@ -21,13 +21,9 @@ function getAndShowFavor() {
         success: function (ans) {
             favorState.imgs = ans;
             if (favorState.imgs.length > 0) {
-                //有：将所有图片进行渲染
-                //  1.图片，页码信息进行设置
                 favorState.pageI = 1;
-                //  2.页码单页渲染
                 drawCurrentPage();
             } else {
-                //无：显示一句话
                 let imgDivE = document.getElementById("favorImages");
                 imgDivE.innerHTML = "您还没有收藏照片，赶紧收藏一张喜爱的照片吧！";
                 let pageBtns = document.getElementById("pageBtns");
@@ -37,7 +33,7 @@ function getAndShowFavor() {
     });
 }
 
-//页码单页渲染(imgs有值)
+//页码单页渲染
 function drawCurrentPage(){
     let startIndex = (favorState.pageI-1)*8;//八个一页
     let img = favorState.imgs[startIndex];
@@ -119,7 +115,6 @@ function getOneImgHtml(img) {
     return html;
 }
 
-//----------按钮处理事件-------------------
 //取消收藏
 function cancelFavor(imgID) {
     let userID = getUserID();
@@ -127,7 +122,6 @@ function cancelFavor(imgID) {
         type: "POST",
         url:'../src/php/cancelFavor.php',
         dataType:'json',
-        //async:true,
         data:{'imgID':imgID,'userID':userID},
 
         success:function (ans) {
@@ -137,7 +131,7 @@ function cancelFavor(imgID) {
     });
 }
 
-//页码点击 跳转页面 从1开始 pageN可能是字符串
+//页码点击
 function changePage(pageI){
     if(pageI==1){
         favorState.pageI = 1;

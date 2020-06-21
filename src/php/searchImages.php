@@ -16,7 +16,6 @@ class ImageSimple{
     }
 }
 
-//从请求URL地址中获取 searchType 参数
 $searchType=$_POST['searchType'];
 $searchValue = $_POST['value'];
 
@@ -24,34 +23,28 @@ try {
     $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    if($searchType=="title"){
-        //设置sql语句  获得imageID，title，des，path
+    if($searchType=="title"){//标题搜索
         $sql = "SELECT ImageID,Title,Description,PATH FROM travelimage WHERE Title LIKE '%".$searchValue."%'";
         $result = $pdo->query($sql);
 
-        //遍历结果集
         $resultSet = array();
         while ($row = $result->fetch()) {
             $resultSet[]=new ImageSimple($row['ImageID'],$row['Title'],$row['Description'],$row['PATH']);
         }
     }else if($searchType=="all"){
-        //设置sql语句  获得imageID，title，des，path 只取80个
         $sql = "SELECT ImageID,Title,Description,PATH FROM travelimage limit 0,80";
         $result = $pdo->query($sql);
 
-        //遍历结果集
         $resultSet = array();
         while ($row = $result->fetch()) {
             $resultSet[]=new ImageSimple($row['ImageID'],$row['Title'],$row['Description'],$row['PATH']);
         }
-    }else if($searchType=="choices"){
+    }else if($searchType=="choices"){//联合搜索
         $theme = $_POST['theme'];
         $country = $_POST['country'];
         $city = $_POST['city'];
-        //设置sql语句  获得imageID，title，des，path 只取80个
         $isFirst = true;
-        //至少有一项
-        $sql = "SELECT ImageID,Title,Description,PATH FROM travelimage where";//limit 0,80
+        $sql = "SELECT ImageID,Title,Description,PATH FROM travelimage where";
         if($theme!='notSelected'){
             $sql=$sql." Content='".$theme."'";
             $isFirst = false;
@@ -73,51 +66,42 @@ try {
             $isFirst =false;
         }
 
-        $sql=$sql." limit 0,80";//不超过80项即可
+        $sql=$sql." limit 0,80";//5*16==80
 
         $result = $pdo->query($sql);
 
-        //遍历结果集
         $resultSet = array();
         while ($row = $result->fetch()) {
             $resultSet[]=new ImageSimple($row['ImageID'],$row['Title'],$row['Description'],$row['PATH']);
         }
-    }else if($searchType=="hotCountry"){
-        //设置sql语句  获得imageID，title，des，path 只取80个
+    }else if($searchType=="hotCountry"){//热门国家
         $sql = "SELECT ImageID,Title,Description,PATH FROM travelimage WHERE CountryCodeISO='".$searchValue."' limit 0,80";
         $result = $pdo->query($sql);
 
-        //遍历结果集
         $resultSet = array();
         while ($row = $result->fetch()) {
             $resultSet[]=new ImageSimple($row['ImageID'],$row['Title'],$row['Description'],$row['PATH']);
         }
-    }else if($searchType=="hotCity"){
-        //设置sql语句  获得imageID，title，des，path 只取80个
+    }else if($searchType=="hotCity"){//热门城市
         $sql = "SELECT ImageID,Title,Description,PATH FROM travelimage WHERE CityCode='".$searchValue."' limit 0,80";
         $result = $pdo->query($sql);
 
-        //遍历结果集
         $resultSet = array();
         while ($row = $result->fetch()) {
             $resultSet[]=new ImageSimple($row['ImageID'],$row['Title'],$row['Description'],$row['PATH']);
         }
-    }else if($searchType=="hotTheme") {
-        //设置sql语句  获得imageID，title，des，path 只取80个
+    }else if($searchType=="hotTheme") {//热门主题
         $sql = "SELECT ImageID,Title,Description,PATH FROM travelimage WHERE Content='" . $searchValue . "' limit 0,80";
         $result = $pdo->query($sql);
 
-        //遍历结果集
         $resultSet = array();
         while ($row = $result->fetch()) {
             $resultSet[] = new ImageSimple($row['ImageID'], $row['Title'], $row['Description'], $row['PATH']);
         }
-    }else if($searchType=="des") {
-        //设置sql语句  获得imageID，title，des，path
+    }else if($searchType=="des") {//描述搜索（搜索页面的）
         $sql = "SELECT ImageID,Title,Description,PATH FROM travelimage WHERE Description LIKE '%" . $searchValue . "%'";
         $result = $pdo->query($sql);
 
-        //遍历结果集
         $resultSet = array();
         while ($row = $result->fetch()) {
             $resultSet[] = new ImageSimple($row['ImageID'], $row['Title'], $row['Description'], $row['PATH']);
@@ -126,7 +110,7 @@ try {
     $pdo = null;
     echo json_encode($resultSet);
 
-}catch (PDOException $e) {//异常处理
+}catch (PDOException $e) {
     die( $e->getMessage() );
 }
 

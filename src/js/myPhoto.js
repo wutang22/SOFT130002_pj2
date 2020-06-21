@@ -3,7 +3,7 @@ var photoState={};
 window.onload = function () {
     drawUserCenter();
     photoState.imgs=[];
-    photoState.pageI = 1;//当前页面 从1开始
+    photoState.pageI = 1;
     getPhotosAndShow();
 };
 
@@ -14,22 +14,16 @@ function getPhotosAndShow() {
         type: "POST",
         url: '../src/php/getMyPhotos.php',
         dataType: 'json',
-        //async: false,//异步，必须的
+        //async: false,//同步
         data: {'userID': userID},
 
         success: function (ans) {
-            //imgs[]= Imgae{ImageID,imagePathe,title,des}
             photoState.imgs = ans;
-            console.log("ans.length="+ans.length);//
-
+            //console.log("ans.length="+ans.length);
             if (photoState.imgs.length > 0) {
-                //有：将所有图片进行渲染
-                //  1.图片，页码信息进行设置
                 photoState.pageI = 1;
-                //  2.页码单页渲染
                 drawCurrentPage();
             } else {
-                //无：显示一句话
                 let imgDivE = document.getElementById("myPhotos");
                 imgDivE.innerHTML = "您还没有上传照片，赶紧点击个人中心的上传按钮增加一张吧！";
                 let pageBtns = document.getElementById("pageBtns");
@@ -39,7 +33,7 @@ function getPhotosAndShow() {
     });
 }
 
-//页码单页渲染(imgs有值)
+//页码单页渲染
 function drawCurrentPage() {
     let startIndex = (photoState.pageI-1)*8;//八个一页
     let img = photoState.imgs[startIndex];
@@ -128,7 +122,7 @@ function getOneImgHtml(img,isFirst) {
     return html;
 }
 
-//----------按钮处理事件-------------------
+
 //修改按钮
 function modifyImg(imgID) {
     setEditImg(imgID);
@@ -146,13 +140,13 @@ function deleteImg(imgID) {
         data:{'imgID':imgID},
 
         success:function (ans) {
-            console.log("删除完毕");//
+            console.log("删除完毕");
             getPhotosAndShow();//重新显示
         }
     });
 }
 
-//页码点击 跳转页面 从1开始 pageN可能是字符串
+//页码点击
 function changePage(pageI) {
     if(pageI==1){
         photoState.pageI = 1;

@@ -203,6 +203,7 @@ function mysubmit() {
             type: 'POST',
             data: formData,
             //这两个设置项必填
+            async: false,//同步，必须的！
             contentType: false,
             processData: false,
             success:function(ans){

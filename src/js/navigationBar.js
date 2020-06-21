@@ -23,7 +23,7 @@ function quit() {
     user.name = null;
     user.userID =-1;
     sessionStorage.setItem('user',JSON.stringify(user));
-    window.location.href='../src/login.html';//跳转到登录页面了
+    window.location.href='../src/login.html';//跳转到登录页面
 }
 
 //登录
